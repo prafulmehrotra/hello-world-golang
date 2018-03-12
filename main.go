@@ -6,6 +6,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"time"
 
 	log "github.com/sirupsen/logrus"
 )
@@ -18,7 +19,7 @@ func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 
 		f := fib()
-
+		time.Sleep(1100 * time.Millisecond)
 		w.WriteHeader(http.StatusOK)
 		io.WriteString(w, "Hello World!!!\n")
 
